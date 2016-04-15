@@ -1,0 +1,16 @@
+{
+    "name": "root/doctrine-migration-independent-from-your-app",
+    "description": "Create your own independant Dcotrine migartion classes.",
+    "type": "Doctrine",
+    "require": {
+        "doctrine/doctrine-migrations-bundle": "^1.1",
+        "doctrine/orm": "^2.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kinsly Roberts",
+            "email": "k.kinsly@gmail.com"
+        }
+    ]
+}
