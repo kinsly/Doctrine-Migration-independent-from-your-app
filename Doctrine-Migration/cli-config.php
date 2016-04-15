@@ -21,11 +21,11 @@ use Doctrine\DBAL\Migrations\Tools\Console\Command\VersionCommand;
  * Database connection
  */
 $params = array(
-    'host' => getenv("MYSQL_HOST"),
-    'port' => getenv("MYSQL_PORT"),
-    'user' => getenv("MYSQL_USER"),
-    'password' => getenv("MYSQL_PASS"),
-    'dbname' => 'smart_checkin',
+    'host' => 'localhost',
+    'port' => 3305,
+    'user' => "root",
+    'password' => "",
+    'dbname' => 'database_name',
     'driver' => 'pdo_mysql',  
 );
 
@@ -35,7 +35,16 @@ $db = \Doctrine\DBAL\DriverManager::getConnection($params);
 $paths = array(
     __DIR__. "/../../core/Domain/Entity", //Location to entities
     __DIR__."/../../core/Persistence/Doctrine/Mapping"); // location to mappings if you use yml or xml instead of Doctrine annotations
+
+//If you use annotations
+//$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode)
+
+//If you use yml
 $config = Setup::createYAMLMetadataConfiguration($paths, false); //false = production, true = development
+
+//If you use xml as your mappings
+//$config = Setup::createXMLMetadataConfiguration($paths, $isDevMode)
+
 $em = EntityManager::create($params, $config);
 
 $helperSet = new HelperSet(array(
