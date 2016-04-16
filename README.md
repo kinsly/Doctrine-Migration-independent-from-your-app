@@ -21,7 +21,7 @@ So we are using that file to tell doctrine that what should happen when we are r
 
 All the codes with comments are available at the repository ./Migration folder
 
-### Step 3: Create configuration.yml
+## Step 3: Create configuration.yml
 
 ````
 name: Doctrine Sandbox Migrations
@@ -53,7 +53,7 @@ configurations. When you change doctrine configuration run this command.
 
 Once you create the migration class
 ````
-./doctrine-migrations migrations:migrate --configuration ../../config/migration/configuration.yml
+./doctrine-migrations migrations:migrate --configuration ../../Doctrine-Migration/configuration.yml
 ```
 
 This will excute sql statements 
@@ -61,7 +61,7 @@ This will excute sql statements
 ### To see sql statements that is going to be executed
 
 ````
-./doctrine-migrations migrations:migrate --dry-run --configuration ../../config/migration/configuration.yml
+./doctrine-migrations migrations:migrate --dry-run --configuration ../../Doctrine-Migration/configuration.yml
 ```
 
 
